@@ -1,6 +1,19 @@
 <html>
   <head>
     <title>Idea Jam Dash</title>
+    <!--Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAdUNSXvowJVzLYXVcdNOlKaLebB6yDCyA",
+        authDomain: "idea-jam-dash.firebaseapp.com",
+        databaseURL: "https://idea-jam-dash.firebaseio.com",
+        storageBucket: "idea-jam-dash.appspot.com",
+        messagingSenderId: "133608522072"
+      };
+      firebase.initializeApp(config);
+    </script>
     <!--AngularJS-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-route.js"></script>
