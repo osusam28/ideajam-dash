@@ -1,6 +1,9 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>Idea Jam Dash</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	
 	<!--Firebase-->
     <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
@@ -34,12 +37,14 @@
 	
 	<!--local scripts-->
 	<script src="app.js"></script>
-	<script src="directives.js"></script>
-	<script src="controllers/dashMain.js"></script>
-	<script src="controllers/dashLogin.js"></script>
-	<script src="controllers/dashRouter.js"></script>
+	<script src="js/directives.js"></script>
+	<script src="js/controllers/dashMain.js"></script>
+	<script src="js/controllers/dashLogin.js"></script>
+	<script src="js/controllers/dashRouter.js"></script>
+	
+	<link rel="stylesheet" href="css/site.css">
   </head>
-  <body ng-app="dash">
+  <body ng-app="dash" class="container-fluid">
     <ng-view></ng-view>
   </body>
 </html>
