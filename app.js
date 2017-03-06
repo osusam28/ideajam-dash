@@ -1,9 +1,20 @@
 var dash = angular.module('dash',['ngRoute'])
 
 .config(function($routeProvider) {
-  $routeProvider.when("/", {
-	  templateUrl: 'templates/dash-main.html',
-	  controller: 'dashMain',
-	  controllerAs: 'main'
+  $routeProvider
+  .when("/login", {
+	  templateUrl: 'templates/dash-login.html',
+	  controller: 'dashLogin',
+	  controllerAs: 'login',
+  })
+  .when ("/router", {
+	  templateUrl: 'templates/dash-router.html',
+	  controller: 'dashRouter',
+	  controllerAs: 'router'
+  })
+  .when ("/", {
+  })
+  .otherwise ({
+	  redirectTo: '/login'
   });
 })
