@@ -5,11 +5,16 @@
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	
+	<!--AngularJS-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-route.js"></script>
+	
 	<!--Firebase-->
     <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-app.js"></script>
+	<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    <!--<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-database.js"></script>-->
     <script>
       // Initialize Firebase
       var config = {
@@ -19,12 +24,8 @@
         storageBucket: "idea-jam-dash.appspot.com",
         messagingSenderId: "133608522072"
       };
-      firebase.initializeApp(config);
+      var f = firebase.initializeApp(config);
     </script>
-	
-	<!--AngularJS-->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-route.js"></script>
 	
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
@@ -41,6 +42,7 @@
 	<script src="js/controllers/dashMain.js"></script>
 	<script src="js/controllers/dashLogin.js"></script>
 	<script src="js/controllers/dashRouter.js"></script>
+	<script src="js/services/dashAuth.js"></script>
 	
 	<link rel="stylesheet" href="css/site.css">
   </head>

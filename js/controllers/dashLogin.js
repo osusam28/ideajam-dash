@@ -1,4 +1,7 @@
-dash.controller('dashLogin', function($scope) {
+dash.controller('dashLogin', function($scope, dashAuth) {
 	var ctr = this;
-	ctr.text = "login message";
+
+	ctr.login = function() {
+		dashAuth.login(ctr.email,ctr.pass);
+	}
 })
