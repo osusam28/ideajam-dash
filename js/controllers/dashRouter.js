@@ -1,4 +1,10 @@
-dash.controller('dashRouter', function($scope) {
+dash.controller('dashRouter', function($scope, $firebaseObject, dashAuth, $location) {
 	var ctr = this;
-	ctr.loc = 0;
+	
+	var ref = firebase.database().ref("/users/" + dashAuth.auth.$getAuth().uid);
+	var obj = $firebaseObject(ref);
+	
+	obj.$loaded().then(function() {
+		ctr.loc = obj.$value;
+	});
 })

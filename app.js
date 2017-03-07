@@ -7,17 +7,10 @@ var dash = angular.module('dash',['ngRoute', 'firebase'])
 		  controller: 'dashLogin',
 		  controllerAs: 'login',
 	  })
-	  .when ("/router", {
+	  .when ("/", {
 		  templateUrl: 'templates/dash-router.html',
 		  controller: 'dashRouter',
 		  controllerAs: 'router',
-		  resolve: {
-			"currentAuth": ["dashAuth", function(dashAuth) {
-				return dashAuth.auth.$requireSignIn();
-			}]
-		  }
-	  })
-	  .when ("/", {
 		  resolve: {
 			"currentAuth": ["dashAuth", function(dashAuth) {
 				return dashAuth.auth.$requireSignIn();
