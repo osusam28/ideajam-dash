@@ -10,14 +10,28 @@ var dash = angular.module('dash',['ngRoute', 'firebase'])
 	  .when ("/router", {
 		  templateUrl: 'templates/dash-router.html',
 		  controller: 'dashRouter',
-		  controllerAs: 'router'
+		  controllerAs: 'router',
+		  resolve: {
+			"currentAuth": ["dashAuth", function(dashAuth) {
+				return dashAuth.auth.$requireSignIn();
+			}]
+		  }
 	  })
 	  .when ("/", {
+		  resolve: {
+			"currentAuth": ["dashAuth", function(dashAuth) {
+				return dashAuth.auth.$requireSignIn();
+			}]
+		  }
 	  })
 	  .otherwise ({
 		  redirectTo: '/login'
 	  });
 	  
-}).run(function() {
-	
+}).run(function($rootScope, $location) {
+	$rootScope.$on("$routeChangeError", function(event, next, previous, error) {
+		if(error === "AUTH_REQUIRED") {
+			$location.path("/login");
+		}
+	})
 });
