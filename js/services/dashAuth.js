@@ -14,6 +14,7 @@ dash.factory('dashAuth', function($firebaseAuth) {
 	
 	var logout = function() {
 		auth.$signOut();
+		console.log("signed out.");
 	}
 	
 	return {

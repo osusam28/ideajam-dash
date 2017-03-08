@@ -1,3 +1,13 @@
-<div>
-main
+<div class="row" ng-controller="mainController as main">
+	<div class="jumbotron col-xs-12 col-md-9 wordcloud">
+
+	</div>
+	<div class="col-xs-12 col-md-3">
+		<ul class="list-group">
+		  <li class="list-group-item" ng-repeat="track in main.music">
+			<span class="badge">{{track.count}}</span>
+			<b>{{track.$id}}</b> <i>{{track.artist}}</i>
+		  </li>
+		</ul>
+	</div>
 </div>

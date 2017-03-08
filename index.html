@@ -12,9 +12,6 @@
 	<!--Firebase-->
     <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
 	<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
-    <!--<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-database.js"></script>-->
     <script>
       // Initialize Firebase
       var config = {
@@ -39,12 +36,18 @@
 	<!--local scripts-->
 	<script src="app.js"></script>
 	<script src="js/directives.js"></script>
-	<script src="js/controllers/dashMain.js"></script>
+	<script src="js/controllers/mainController.js"></script>
 	<script src="js/controllers/dashLogin.js"></script>
 	<script src="js/controllers/dashRouter.js"></script>
 	<script src="js/services/dashAuth.js"></script>
+	<script src="js/services/dashDataSource.js"></script>
+	
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
+	<script src="js/wordCloud.js"></script>
 	
 	<link rel="stylesheet" href="css/site.css">
+	
   </head>
   <body ng-app="dash" class="container-fluid">
     <ng-view></ng-view>

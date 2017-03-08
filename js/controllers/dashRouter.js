@@ -1,10 +1,11 @@
-dash.controller('dashRouter', function($scope, $firebaseObject, dashAuth, $location) {
+dash.controller('dashRouter', function($scope, $firebaseObject, dashAuth, dashDataSource, $location) {
 	var ctr = this;
+	ctr.message = "redirecting..."
 	
-	var ref = firebase.database().ref("/users/" + dashAuth.auth.$getAuth().uid);
-	var obj = $firebaseObject(ref);
+	var obj = dashDataSource.getUserNode(dashAuth.auth);
 	
 	obj.$loaded().then(function() {
+		ctr.message = null;
 		ctr.loc = obj.$value;
 	});
 })
