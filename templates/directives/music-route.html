@@ -1,3 +1,15 @@
 <div class="row" ng-controller="musicController as music">
-	
+	<div class="music-form col-xs-offset-2 col-md-offset-3 col-xs-8 col-md-6">
+		<form class="form-horizontal" ng-submit="music.submitSong()">
+			 <div class="form-group">
+				 <input type="text" class="form-control" placeholder="Song Title" ng-model="music.title" required>
+			 </div>
+			 <div class="form-group">
+				 <input type="text" class="form-control" placeholder="Artist (Optional)" ng-model="music.artist">
+			 </div>
+			 <div class="form-group">
+				 <button type="submit" class="btn btn-default">Submit</button>
+			 </div>
+		</form>
+	</div>
 </div>

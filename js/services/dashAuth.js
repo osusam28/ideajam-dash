@@ -1,4 +1,6 @@
 dash.factory('dashAuth', function($firebaseAuth) {
+	var callbacks = [];
+	
 	var auth = $firebaseAuth();
 	
 	var login = function(email,pass,callback) {
@@ -13,12 +15,27 @@ dash.factory('dashAuth', function($firebaseAuth) {
 	}
 	
 	var logout = function() {
-		auth.$signOut();
-		console.log("signed out.");
+		auth.$signOut().then(function() {
+			console.log("signed out.");
+		}).catch(function(error) {
+			
+		});
 	}
+	
+	var addChangeCallback = function(callback) {
+		callbacks.push(callback);
+	}
+	
+	auth.$onAuthStateChanged(function(user) {
+		callbacks.forEach(function(callback) {
+			callback(user);
+		});
+	});
 	
 	return {
 		auth: auth,
-		login: login
+		login: login,
+		logout: logout,
+		addChangeCallback: addChangeCallback
 	}
 });

@@ -15,6 +15,8 @@ dash.factory('dashDataSource', function($firebaseObject, $firebaseArray) {
 	}
 	
 	var addSong = function(song, artist) {
+		if(artist == undefined) { artist = "" }
+		
 		firebase.database().ref("/music/" + song.toUpperCase()).set({
 			artist: artist.toUpperCase(),
 			count: 1
@@ -37,8 +39,24 @@ dash.factory('dashDataSource', function($firebaseObject, $firebaseArray) {
 		
 			obj.$value = count;
 			obj.$save();
+			
+			obj.$destroy();
 		}).catch(function(error) {
 			return false;
+		});
+	}
+	
+	var deleteSong = function(array, song) {
+		array.$remove(array.$indexFor(song)).then(function() {
+			return true;
+		}).catch(function() {
+			return false;
+		});
+	}
+	
+	var addWords = function(word_data) {
+		var ref = firebase.database().ref("/words/").push({
+			data: word_data
 		});
 	}
 	
@@ -47,6 +65,8 @@ dash.factory('dashDataSource', function($firebaseObject, $firebaseArray) {
 		getMusicNode: getMusicNode,
 		getWordsNode: getWordsNode,
 		addSong: addSong,
-		updateSong: updateSong
+		updateSong: updateSong,
+		addWords: addWords,
+		deleteSong: deleteSong
 	}
 });

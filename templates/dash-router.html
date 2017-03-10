@@ -1,6 +1,9 @@
-<div>
-{{router.message}}
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container-fluid">
+	<button type="button" class=" logout-btn btn btn-default navbar-btn navbar-right" 
+		ng-click="router.logout()">Sign Out</button>
+  </div>
+</nav>
 <div main-route ng-if="router.loc == 0"></div>
 <div word-cloud-route ng-if="router.loc == 1"></div>
 <div music-route ng-if="router.loc == 2"></div>
-</div>

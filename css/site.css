@@ -1,6 +1,22 @@
 .login-box {
 	margin-top: 10em;
-	padding-top: 3em;
-	padding-bottom: 3em;
+	padding: 3em;
 	background-color: #00906A;
 }
+
+.music-form {
+	margin-top: 10em;
+	padding: 3em;
+	background-color: #00906A;
+}
+
+.cloud-form {
+	margin-top: 10em;
+	padding: 3em;
+	background-color: #00906A;
+}
+
+.logout-btn {
+	margin-right: 0.5em;
+}
+

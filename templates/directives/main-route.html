@@ -4,9 +4,14 @@
 	</div>
 	<div class="col-xs-12 col-md-3">
 		<ul class="list-group">
-		  <li class="list-group-item" ng-repeat="track in main.music">
-			<span class="badge">{{track.count}}</span>
-			<b>{{track.$id}}</b> <i>{{track.artist}}</i>
+		  <li class="list-group-item row" ng-repeat="track in main.track_list | orderBy:'-count'">
+			<span class="badge pull-left">{{track.count}}</span>
+			<div class="col-xs-8">
+				<b>{{track.$id}}</b> 
+				<i>{{track.artist}}</i>
+			</div>
+			<span class="glyphicon glyphicon-remove pull-right" aria-hidden="true"
+				ng-click="main.deleteSong(track.$id)"></span>
 		  </li>
 		</ul>
 	</div>

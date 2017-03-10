@@ -1,5 +1,7 @@
 dash.controller('musicController', function($scope, dashDataSource) {
 	var ctr = this;
 	
-	dashDataSource.addSong("How Great Thou Art", "");
+	ctr.submitSong = function() {
+		dashDataSource.addSong(ctr.title, ctr.artist);
+	}
 });
