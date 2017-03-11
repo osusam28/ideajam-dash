@@ -1,6 +1,6 @@
 <div class="row" ng-controller="musicController as music">
 	<div class="music-form col-xs-offset-2 col-md-offset-3 col-xs-8 col-md-6">
-		<form class="form-horizontal" ng-submit="music.submitSong()">
+		<form class="form-horizontal" ng-submit="music.submitSong()" ng-show="!music.submitted">
 			 <div class="form-group">
 				 <input type="text" class="form-control" placeholder="Song Title" ng-model="music.title" required>
 			 </div>
@@ -11,5 +11,9 @@
 				 <button type="submit" class="btn btn-default">Submit</button>
 			 </div>
 		</form>
+		<div class="" ng-show="music.submitted">
+			<div>Song submitted successfully</div>
+			<button class="btn btn-default" ng-click="music.addAnother()">Submit Another</button>
+		</div>
 	</div>
 </div>

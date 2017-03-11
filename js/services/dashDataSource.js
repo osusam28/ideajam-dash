@@ -41,6 +41,8 @@ dash.factory('dashDataSource', function($firebaseObject, $firebaseArray) {
 			obj.$save();
 			
 			obj.$destroy();
+			
+			return true;
 		}).catch(function(error) {
 			return false;
 		});
