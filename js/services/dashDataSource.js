@@ -58,7 +58,7 @@ dash.factory('dashDataSource', function($firebaseObject, $firebaseArray) {
 	
 	var addWords = function(word_data) {
 		var ref = firebase.database().ref("/words/").push({
-			data: word_data
+			data: word_data.toUpperCase();
 		});
 	}
 	
