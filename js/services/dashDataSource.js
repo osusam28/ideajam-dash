@@ -62,6 +62,11 @@ dash.factory('dashDataSource', function($firebaseObject, $firebaseArray) {
 		});
 	}
 	
+	var getWords = function(key) {
+		var ref = firebase.database().ref("/words/" + key);
+		return $firebaseObject(ref);
+	}
+	
 	return {
 		getUserNode: getUserNode,
 		getMusicNode: getMusicNode,
@@ -69,6 +74,7 @@ dash.factory('dashDataSource', function($firebaseObject, $firebaseArray) {
 		addSong: addSong,
 		updateSong: updateSong,
 		addWords: addWords,
-		deleteSong: deleteSong
+		deleteSong: deleteSong,
+		getWords: getWords
 	}
 });

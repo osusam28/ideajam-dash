@@ -11,9 +11,13 @@
 				 <button type="submit" class="btn btn-default">Submit</button>
 			 </div>
 		</form>
-		<div class="" ng-show="music.submitted">
-			<div>Song submitted successfully</div>
-			<button class="btn btn-default" ng-click="music.addAnother()">Submit Another</button>
-		</div>
+		<form class="form-horizontal" ng-submit="music.addAnother()" ng-show="music.submitted">
+			 <div class="form-group">
+				 <div>Song submitted successfully</div>
+			 </div>
+			 <div class="form-group">
+				 <button type="submit" class="btn btn-default">Submit Again</button>
+			 </div>
+		</form>
 	</div>
 </div>

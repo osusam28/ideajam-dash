@@ -15,7 +15,7 @@ dash.controller('mainController', function($scope, dashDataSource, dashAuth) {
 		console.log("Error:", error);
 	});
 	
-	//load the list of words
+	/*
 	words_list.$loaded().then(function(data) {
 		
 		words_list.forEach(function(phrase) {
@@ -25,13 +25,27 @@ dash.controller('mainController', function($scope, dashDataSource, dashAuth) {
 		showNewWords(myWordCloud);
 		
 	}).catch(function(error) {
-		console.log("Error:", error);
+		console.log("Error: ", error);
+	});
+	*/
+	
+	//load new words
+	words_list.$watch(function(obj) {
+		console.log(obj.key);
+		var newWords = dashDataSource.getWords(obj.key);
+		newWords.$loaded().then(function() {
+			parseNewWords(newWords.data);
+			showNewWords(myWordCloud);
+		}).catch(function(error) {
+			console.log("Error: ", error);
+		});
 	});
 	
 	dashAuth.addChangeCallback(function(user) {
 		if(user == null) {
 			track_list.$destroy();
 			words_list.$destroy();
+			newWords.$destroy();
 		}
 	});
 	

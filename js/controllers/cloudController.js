@@ -2,7 +2,7 @@ dash.controller('cloudController', function($scope, dashDataSource) {
 	var ctr = this;
 	ctr.submitted = false;
 	ctr.submitWords = function() {
-		dashDataSource.addWords(ctr.text);
+		dashDataSource.addWords(ctr.text.toUpperCase());
 		ctr.submitted = true;
 	}
 	
