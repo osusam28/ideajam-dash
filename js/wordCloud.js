@@ -57,7 +57,7 @@ function wordCloud(selector) {
         //The outside world will need to call this function, so make it part
         // of the wordCloud return value.
         update: function(words) {
-            d3.layout.cloud().size([500, 500])
+            d3.layout.cloud().size([800, 500])
                 .words(words)
                 .padding(1)
                 .rotate(function() { return ~~(Math.random() * 2) * 90; })
@@ -102,7 +102,7 @@ function getWords() {
 			.replace(/[!\.,:;\?]/g, '')
 			.split(' ')
 			.map(function(d) {
-				return {text: d, size: wordCount[d] * 15};
+				return {text: d, size: wordCount[d] * 5};
 				//return {text: d, size: 25};
 			})
 }
@@ -114,8 +114,13 @@ function showNewWords(vis, i) {
     //i = i || 0;
 
     //vis.update(getWords(i ++ % words.length))
-	vis.update(getWords())
+	vis.update(getWords());
     //setTimeout(function() { showNewWords(vis, i + 1)}, 2000)
+}
+
+function clearWords() {
+	words = "";
+	wordCount = [];
 }
 
 //Create a new instance of the word cloud visualisation.

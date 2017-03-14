@@ -1,6 +1,8 @@
 dash.controller('mainController', function($scope, dashDataSource, dashAuth) {
 	var ctr = this;
 	
+	clearWords();
+	
 	var track_list = dashDataSource.getMusicNode();
 	var words_list = dashDataSource.getWordsNode();
 	

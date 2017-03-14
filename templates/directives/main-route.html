@@ -1,18 +1,23 @@
-<div class="row" ng-controller="mainController as main">
-	<div class="jumbotron col-xs-12 col-md-9 wordcloud">
-
-	</div>
-	<div class="col-xs-12 col-md-3">
-		<ul class="list-group">
-		  <li class="list-group-item row" ng-repeat="track in main.track_list | orderBy:'-count'">
-			<span class="badge pull-left">{{track.count}}</span>
-			<div class="col-xs-8">
-				<b>{{track.$id}}</b> 
-				<i>{{track.artist}}</i>
+<div class="container-fluid">
+	<div class="" ng-controller="mainController as main">
+		<div class="panel panel-default pull-left">
+			<div class="panel-body wordcloud">
 			</div>
-			<span class="glyphicon glyphicon-remove pull-right" aria-hidden="true"
-				ng-click="main.deleteSong(track.$id)"></span>
-		  </li>
-		</ul>
+		</div>
+		<!--<div class="panel panel-default pull-left">
+			<div class="panel-body">
+				<ul class="list-group">
+				  <li class="list-group-item row track-list" ng-repeat="track in main.track_list | orderBy:'-count'">
+					<span class="badge pull-left">{{track.count}}</span>
+					<div class="col-xs-8">
+						<b>{{track.$id}}</b> 
+						<i>{{track.artist}}</i>
+					</div>
+					<span class="glyphicon glyphicon-remove pull-right" aria-hidden="true"
+						ng-click="main.deleteSong(track.$id)"></span>
+				  </li>
+				</ul>
+			</div>
+		</div>-->
 	</div>
 </div>
