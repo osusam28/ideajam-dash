@@ -4,6 +4,7 @@ Dashboard application for Idea Jams
 AngularJS application project experimenting with the authentication functionality offered by Google Firebase.  The application uses the [angularFire](https://github.com/firebase/angularfire) library to interact with Firebase's realtime database and email/password authentication services.  
 
 There are three accounts, corresponding with the 3 functionalities of this application
+
 music / musicpj15
 This takes the user to a dialog that allows him/her to submit song requests, one at a time
 
