@@ -8,10 +8,10 @@ There are three accounts, corresponding with the 3 functionalities of this appli
 __music / musicpj15__
 This takes the user to a dialog that allows him/her to submit song requests, one at a time
 
-__wordcloud / wcpapa22__
+__wordcloud / wcpapa15__
 This takes the user to a dialog that allows him/her to enter phrases/sentences/words to add to the word cloud functionality
 
-__admin / adminpj15__
+__admin / adminpj22__
 This is the main dashboard that displays the rendered word cloud, as well as the songs that have been submitted and their count.  
 
 Also uses an adaptation of [d3 layout](https://github.com/jasondavies/d3-cloud) word cloud library.  This functionality is still in progress.  
